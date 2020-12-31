@@ -23,13 +23,13 @@ function getUserInfo() {
         //     Authorization:localStorage.getItem('token')||''
         // },
         success: function (res) {
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 layui.layer.msg(res.message);
 
                 return
             }
-            console.log(res);
+            // console.log(res);
             //调用 renderAvatar渲染用户的头像
             renderAvatar(res.data);
         },
@@ -49,9 +49,9 @@ function getUserInfo() {
 }
 
 function renderAvatar(user) {
-    console.log(user);
+    // console.log(user);
     const name = user.nickname || user.username;
-    console.log(name);
+    // console.log(name)
     $('#welcome').html(`欢迎${name}`);
     if (user.user_pic) {
         $(".layui-nav-img").attr('src', user.user_pic).show();
